@@ -7,11 +7,14 @@ kamera.set(4,480) #video yüksekliğini belirler.
 face_detector = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 imagePaths = [os.path.join("veriseti",f) for f in os.listdir("veriseti")]
 id = []
-for imagePath in imagePaths: 
-    ids = int(os.path.split(imagePath)[-1].split(".")[0])
-    if ids not in id:
-        id.append(ids)
-face_id = id[-1] + 1
+for imagePath in imagePaths:
+    try: 
+        ids = int(os.path.split(imagePath)[-1].split(".")[0])
+        if ids not in id:
+            id.append(ids)
+        face_id = id[-1] + 1
+    except ValueError:
+        face_id = 1
 MAXFOTOSAY = 50 #her bir yüz için kullanılacak imaj sayısı
 name = input("Lütfen kullanıcın ismini ve soyismini yazınız (Örnek: Mehdi Koşaca):")
 print("\n [INFO] Kayıtlar Başlıyor. Kameraya Bak ve Bekle...")
