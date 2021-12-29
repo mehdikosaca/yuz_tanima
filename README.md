@@ -2,7 +2,7 @@
 Bu repo oluşturacağınız yüz verisetlerini tanımaya çalışan makine öğrenmesi temelli bir python yazılımıdır. 
 
 ### Program Hakkında
-Programı maksimum verimle kullanmak için kaliteli bir kamera kullanın. Kamera başlatıldıktan sonra kameraya bakarak sabit durun. Hareket ederek alınan anlıklar programın performansını düşürmektedir. 
+Programı maksimum verimle kullanmak için kaliteli bir kamera tercih edin. Program veriseti oluşturmak için kamerayı başlattığında lütfen sabit durun. Hareket halinde çekilen anlıklar programın performansını düşürmektedir. 
 
 #### Sistem Bağımlılıkları
 * Python3
