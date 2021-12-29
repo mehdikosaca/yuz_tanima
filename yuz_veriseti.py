@@ -1,6 +1,11 @@
 import cv2
 import os
 
+try:
+    os.mkdir("egitim")
+except:
+    pass
+
 kamera = cv2.VideoCapture(0)
 kamera.set(3,640) #video genişliğini belirler.
 kamera.set(4,480) #video yüksekliğini belirler.
@@ -13,7 +18,7 @@ for imagePath in imagePaths:
         if ids not in id:
             id.append(ids)
         face_id = id[-1] + 1
-    except ValueError:
+    except:
         face_id = 1
 MAXFOTOSAY = 50 #her bir yüz için kullanılacak imaj sayısı
 name = input("Lütfen kullanıcın ismini ve soyismini yazınız (Örnek: Mehdi Koşaca):")
@@ -42,3 +47,8 @@ while(True):
 print("\n [INFO] Program Sonlanıyor ve Bellek Temizleniyor...")
 kamera.release()
 cv2.destroyAllWindows()
+try:
+    os.chdir("veriseti")
+    os.remove(".gitkeep")
+except:
+    pass
